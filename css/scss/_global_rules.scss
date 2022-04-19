@@ -1,0 +1,18 @@
+@import "./mixins";
+@import "./colors_variables";
+//
+html {
+  scroll-behavior: smooth;
+}
+//
+body {
+  font-family: "Nunito";
+}
+//
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}

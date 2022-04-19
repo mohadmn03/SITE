@@ -1,0 +1,137 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito";
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/*start settings box*/
+.settings-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 30%;
+  z-index: 2;
+  color: white;
+}
+
+/*end settings box*/
+/*start landing page*/
+.landing-page {
+  min-height: 100vh;
+  background-image: url("../imgs/background-1.jpeg");
+  background-size: cover;
+  position: relative;
+}
+
+.landing-page .overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.61);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.landing-page .header-area {
+  position: relative;
+  color: white;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+.landing-page .header-area .logo {
+  width: 300px;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.landing-page .header-area .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.landing-page .header-area .links li a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.landing-page .header-area .links li a:hover {
+  color: #ff9800;
+}
+
+.landing-page .header-area .links li .active {
+  color: #ff9800;
+}
+
+.landing-page .introduction-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.landing-page .introduction-text h1 {
+  font-size: 45px;
+  margin: 0 0 20px 0;
+}
+
+.landing-page .introduction-text h1 span {
+  color: #ff9800;
+}
+
+.landing-page .introduction-text p {
+  line-height: 1.6;
+  font-size: 25px;
+  margin: 0;
+}
+
+/*end landing page*/
+/*# sourceMappingURL=index.css.map */

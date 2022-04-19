@@ -1,0 +1,55 @@
+@import "./colors_variables";
+//media queries
+@mixin breakpoints($point) {
+  @if ($point == mobile) {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if($point == small) {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if($point == medium) {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if($point == large) {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+//
+//width
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+//same width
+@mixin samewh($width) {
+  width: $width;
+  height: $width;
+}
+//padding left right
+@mixin paddinglr($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+//padding top bottom
+@mixin paddingtb($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+// flex centering
+@mixin flexCentering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// transform centering
+@mixin transformCentering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

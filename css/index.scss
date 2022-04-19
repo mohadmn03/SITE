@@ -1,0 +1,83 @@
+@import "./scss/global_rules";
+@import "./scss/mixins";
+@import "./scss/colors_variables";
+//
+/*start settings box*/
+.settings-box {
+  @include transformCentering;
+  top: 30%;
+  z-index: 2;
+  color: white;
+  i {
+  }
+  .settings-container {
+  }
+}
+/*end settings box*/
+/*start landing page*/
+.landing-page {
+  min-height: 100vh;
+  background-image: url("../imgs/background-1.jpeg");
+  background-size: cover;
+  position: relative;
+  .overlay {
+    position: absolute;
+    background-color: rgba($color: $black, $alpha: 0.61);
+    @include samewh(100%);
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .header-area {
+    position: relative;
+    color: $white;
+    z-index: 2;
+    display: flex;
+    padding: 10px;
+    .logo {
+      width: 300px;
+      padding: 15px;
+      @include flexCentering;
+      justify-content: normal;
+      font-weight: 800;
+      font-size: 20px;
+    }
+    .links {
+      @include flexCentering;
+      justify-content: flex-end;
+      gap: 10px;
+      width: 100%;
+      @include paddinglr(0, 20px);
+      li {
+        a {
+          transition: $main-transition;
+          &:hover {
+            color: $main-color;
+          }
+        }
+        .active {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .introduction-text {
+    @include transformCentering;
+    z-index: 2;
+    color: $white;
+    text-align: center;
+    h1 {
+      font-size: 45px;
+      margin: 0 0 20px 0;
+      span {
+        color: $main-color;
+      }
+    }
+    p {
+      line-height: 1.6;
+      font-size: 25px;
+      margin: 0;
+    }
+  }
+}
+/*end landing page*/
