@@ -1,5 +1,14 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+:root {
+  --main-color: #ff9800;
 }
 
 body {
@@ -17,14 +26,126 @@ a {
 
 /*start settings box*/
 .settings-box {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  z-index: 1000;
+  background-color: white;
+  width: 280px;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.settings-box.open {
+  left: 0;
+}
+
+.settings-box .iconCon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  top: 30%;
-  z-index: 2;
+  top: 200px;
+  right: -32px;
+  background-color: white;
+  color: black;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 32px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.settings-box .settings-container .option-box {
+  padding: 10px;
+  margin: 10px;
+  background-color: #eee;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.settings-box .settings-container .option-box h4 {
+  margin: 0;
+  color: #666;
+}
+
+.settings-box .settings-container .option-box .colors-list {
+  text-align: center;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin: 10px 0px 5px;
+}
+
+.settings-box .settings-container .option-box .colors-list li {
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #eee;
+}
+
+.settings-box .settings-container .option-box .colors-list li:first-child {
+  background-color: #ff9800;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(2) {
+  background-color: #e91e63;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(3) {
+  background-color: #009688;
+}
+
+.settings-box .settings-container .option-box .colors-list li:nth-child(4) {
+  background-color: #03a9f4;
+}
+
+.settings-box .settings-container .option-box .colors-list li:last-child {
+  background-color: #4caf50;
+}
+
+.settings-box .settings-container .option-box .colors-list .active {
+  border-color: white;
+  cursor: default;
+}
+
+.settings-box .settings-container .option-box .yes,
+.settings-box .settings-container .option-box .no {
   color: white;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 15px 0px 8px;
+  width: 80px;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+.settings-box .settings-container .option-box .yes.active,
+.settings-box .settings-container .option-box .no.active {
+  opacity: 1;
+  cursor: default;
+}
+
+.settings-box .settings-container .option-box .yes {
+  background-color: #009688;
+}
+
+.settings-box .settings-container .option-box .no {
+  background-color: #e91e63;
 }
 
 /*end settings box*/
@@ -95,16 +216,16 @@ a {
 }
 
 .landing-page .header-area .links li a {
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .landing-page .header-area .links li a:hover {
-  color: #ff9800;
+  color: var(--main-color);
 }
 
 .landing-page .header-area .links li .active {
-  color: #ff9800;
+  color: var(--main-color);
 }
 
 .landing-page .introduction-text {
@@ -124,7 +245,7 @@ a {
 }
 
 .landing-page .introduction-text h1 span {
-  color: #ff9800;
+  color: var(--main-color);
 }
 
 .landing-page .introduction-text p {

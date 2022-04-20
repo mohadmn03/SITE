@@ -4,13 +4,101 @@
 //
 /*start settings box*/
 .settings-box {
-  @include transformCentering;
-  top: 30%;
-  z-index: 2;
-  color: white;
-  i {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  z-index: 1000;
+  background-color: $white;
+  width: 280px;
+  min-height: 100vh;
+  transition: $main-transition;
+  &.open {
+    left: 0;
+  }
+  .iconCon {
+    position: absolute;
+    top: 200px;
+    right: -32px;
+    background-color: $white;
+    color: $black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    @include paddingtb(5px, 5px);
+    width: 32px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
   }
   .settings-container {
+    .option-box {
+      padding: 10px;
+      margin: 10px;
+      background-color: #eee;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      h4 {
+        margin: 0;
+        color: #666;
+      }
+      //colors
+      .colors-list {
+        text-align: center;
+        padding: 0;
+        @include flexCentering;
+        gap: 5px;
+        margin: 10px 0px 5px;
+        li {
+          @include samewh(25px);
+          background-color: green;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 3px solid #eee;
+          &:first-child {
+            background-color: $first-color;
+          }
+          &:nth-child(2) {
+            background-color: $second-color;
+          }
+          &:nth-child(3) {
+            background-color: $third-color;
+          }
+          &:nth-child(4) {
+            background-color: $qua-color;
+          }
+          &:last-child {
+            background-color: $cin-color;
+          }
+        }
+        .active {
+          border-color: $white;
+          cursor: default;
+        }
+      }
+      //random backgrounds
+      .yes,
+      .no {
+        color: $white;
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 15px;
+        margin: 15px 0px 8px;
+        width: 80px;
+        font-weight: bold;
+        border-radius: 4px;
+        opacity: 0.3;
+        &.active {
+          opacity: 1;
+          cursor: default;
+        }
+      }
+      .yes {
+        background-color: $third-color;
+      }
+      .no {
+        background-color: $second-color;
+      }
+    }
   }
 }
 /*end settings box*/
@@ -52,11 +140,11 @@
         a {
           transition: $main-transition;
           &:hover {
-            color: $main-color;
+            color: var(--main-color);
           }
         }
         .active {
-          color: $main-color;
+          color: var(--main-color);
         }
       }
     }
@@ -70,7 +158,7 @@
       font-size: 45px;
       margin: 0 0 20px 0;
       span {
-        color: $main-color;
+        color: var(--main-color);
       }
     }
     p {
