@@ -103,3 +103,40 @@ window.addEventListener("scroll", (event) => {
   }
 });
 //end skills
+//start gallery
+//create popup with image
+let ourGallery = document.querySelectorAll(".images-box img");
+ourGallery.forEach((image) => {
+  image.addEventListener("click", (event) => {
+    //creat overlay start
+    let overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    document.body.appendChild(overlay);
+    //creat overlay end
+    //creat popup start
+    let popup = document.createElement("div");
+    popup.className = "popup";
+    document.body.appendChild(popup);
+    //creat popup end
+    //set image title from alt
+    if (image.alt !== "") {
+      //creat heading
+      let imgHeading = document.createElement("h3");
+      let imageTxt = document.createTextNode(image.alt);
+      imgHeading.appendChild(imageTxt);
+      popup.appendChild(imgHeading);
+    }
+    //creat the close span
+    let close = document.createElement("span");
+    let closeText = document.createTextNode("x");
+    close.appendChild(closeText);
+    popup.appendChild(close);
+
+    //creat popup image start
+    let popupImage = document.createElement("img");
+    popupImage.src = image.src;
+    popup.appendChild(popupImage);
+    //creat popup image end
+  });
+});
+//end gallery

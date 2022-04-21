@@ -376,6 +376,7 @@ a {
 .our-gallery {
   padding-top: 50px;
   padding-bottom: 50px;
+  position: relative;
 }
 
 .our-gallery .container {
@@ -400,4 +401,54 @@ a {
 }
 
 /*end our gallery*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  z-index: 10001;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.popup img {
+  width: 100%;
+  height: 100%;
+}
+
+.popup h3 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+}
+
+.popup span {
+  color: var(--main-color);
+  background-color: #eee;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  right: -50%;
+  top: -50%;
+}
 /*# sourceMappingURL=index.css.map */

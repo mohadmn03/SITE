@@ -241,6 +241,7 @@
 /*start our gallery*/
 .our-gallery {
   @include paddingtb(50px, 50px);
+  position: relative;
   .container {
     text-align: center;
   }
@@ -260,3 +261,44 @@
   }
 }
 /*end our gallery*/
+//popup start
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: $black, $alpha: 0.7);
+  z-index: 10000;
+}
+.popup {
+  @include transformCentering;
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  z-index: 10001;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 20px;
+  img {
+    @include samewh(100%);
+  }
+  h3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  span {
+    color: var(--main-color);
+    background-color: #eee;
+    @include samewh(100px);
+    border-radius: 50%;
+    position: absolute;
+    right: -50%;
+    top: -50%;
+  }
+}
+//popup  end
