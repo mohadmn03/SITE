@@ -3,6 +3,8 @@
 //
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 //
 html {
@@ -15,6 +17,12 @@ html {
 //
 body {
   font-family: "Nunito";
+}
+//
+.container {
+  width: 1170px;
+  @include paddinglr(15px, 15px);
+  margin: auto;
 }
 //
 ul {

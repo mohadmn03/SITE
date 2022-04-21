@@ -1,6 +1,8 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -13,6 +15,13 @@ html {
 
 body {
   font-family: "Nunito";
+}
+
+.container {
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
 }
 
 ul {
@@ -255,4 +264,140 @@ a {
 }
 
 /*end landing page*/
+/*start about us*/
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-us .info-box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 30px;
+}
+
+.about-us .info-box h2 {
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+
+.about-us .info-box p {
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+  font-size: 25px;
+}
+
+.about-us .img-box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.about-us .img-box img {
+  width: 300px;
+}
+
+/*end about us*/
+/*start our skills*/
+.our-skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+
+.our-skills h2 {
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+
+.our-skills .skill-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: white;
+}
+
+.our-skills .skill-name {
+  text-align: center;
+  font-weight: bold;
+  width: 150px;
+}
+
+.our-skills .skill-progress {
+  width: calc(100% - 150px);
+  height: 20px;
+  background-color: #f6f6f6;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.our-skills .skill-progress span {
+  background-color: var(--main-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  -webkit-transition: all 1.8s;
+  transition: all 1.8s;
+}
+
+/*end our skills*/
+/*start our gallery*/
+.our-gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.our-gallery .container {
+  text-align: center;
+}
+
+.our-gallery h2 {
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+}
+
+.our-gallery .images-box img {
+  width: 220px;
+  height: 200px;
+  padding: 3px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  margin: 2px;
+  cursor: pointer;
+}
+
+/*end our gallery*/
 /*# sourceMappingURL=index.css.map */

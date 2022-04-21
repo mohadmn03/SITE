@@ -169,3 +169,94 @@
   }
 }
 /*end landing page*/
+/*start about us*/
+.about-us {
+  @include paddingtb(50px, 50px);
+  @include flexCentering;
+  .info-box {
+    flex: 1;
+    padding: 30px;
+    h2 {
+      @include main-headingTwo;
+      margin: 0 0 10px;
+    }
+    p {
+      line-height: 1.8;
+      color: #767676;
+      margin: 0;
+      font-size: 25px;
+    }
+  }
+  .img-box {
+    flex: 1;
+    text-align: center;
+    img {
+      width: 300px;
+    }
+  }
+}
+/*end about us*/
+/*start our skills*/
+.our-skills {
+  @include paddingtb(50px, 50px);
+  background-color: #eee;
+  h2 {
+    @include main-headingTwo;
+    margin: 0 0 50px;
+    text-align: center;
+  }
+  .skill {
+    &-box {
+      @include flexCentering;
+      justify-content: normal;
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: white;
+    }
+    &-name {
+      text-align: center;
+      font-weight: bold;
+      width: 150px;
+    }
+    &-progress {
+      width: calc(100% - 150px);
+      height: 20px;
+      background-color: #f6f6f6;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      span {
+        background-color: var(--main-color);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        transition: all 1.8s;
+      }
+    }
+  }
+}
+/*end our skills*/
+/*start our gallery*/
+.our-gallery {
+  @include paddingtb(50px, 50px);
+  .container {
+    text-align: center;
+  }
+  h2 {
+    @include main-headingTwo;
+    margin: 0 0 50px;
+  }
+  .images-box {
+    img {
+      @include wh(220px, 200px);
+      padding: 3px;
+      background-color: #f6f6f6;
+      border: 1px solid #ccc;
+      margin: 2px;
+      cursor: pointer;
+    }
+  }
+}
+/*end our gallery*/

@@ -53,3 +53,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+//main heading-2
+@mixin main-headingTwo {
+  font-weight: bold;
+  font-size: 45px;
+  color: var(--main-color);
+}

@@ -87,3 +87,19 @@ function randomizeImgs() {
     }, 3000);
   }
 }
+//end page backgrounds
+//start skills
+let ourSkills = document.querySelector(".our-skills");
+let skillSpan = document.querySelectorAll(".skill-progress span");
+window.addEventListener("scroll", (event) => {
+  let ws = window.scrollY;
+  let wh = window.innerHeight;
+  let osOffSetTop = ourSkills.offsetTop;
+  let osOffSetHeight = ourSkills.offsetHeight;
+  if (ws >= osOffSetHeight + 300) {
+    skillSpan.forEach((span) => {
+      span.style.width = `${span.dataset.width}`;
+    });
+  }
+});
+//end skills
