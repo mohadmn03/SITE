@@ -75,6 +75,13 @@ choixButtons.forEach((button) => {
   });
 });
 //end setting box
+//start bullets
+let bullets = document.querySelectorAll(".bullet");
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", (event) => {});
+});
+
+//end bullets
 //landing page backgrounds
 let landingPage = document.querySelector(".landing-page");
 let numbers = [1, 2, 3, 4, 5];
@@ -131,7 +138,10 @@ ourGallery.forEach((image) => {
     let closeText = document.createTextNode("x");
     close.appendChild(closeText);
     popup.appendChild(close);
-
+    close.addEventListener("click", (event) => {
+      close.parentElement.remove();
+      overlay.remove();
+    });
     //creat popup image start
     let popupImage = document.createElement("img");
     popupImage.src = image.src;
