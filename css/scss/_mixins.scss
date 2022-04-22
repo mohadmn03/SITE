@@ -59,3 +59,13 @@
   font-size: 45px;
   color: var(--main-color);
 }
+//
+@mixin baCircle {
+  content: "";
+  position: absolute;
+  @include samewh(14px);
+  border-radius: 50%;
+  background-color: $white;
+  border: 3px solid var(--main-color);
+  top: 20px;
+}
