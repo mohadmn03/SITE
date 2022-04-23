@@ -30,18 +30,38 @@
         </div>
         <div class="option-box">
           <h4>Random Backrounds</h4>
-          <span class="yes active">Yes</span>
-          <span class="no">No</span>
+          <span class="yes active" data-class="yes">Yes</span>
+          <span class="no" data-class="no">No</span>
         </div>
+        <div class="bullets-box">
+          <h4>Show Bullets</h4>
+          <span class="yes active" data-class="yes">Yes</span>
+          <span class="no" data-class="no">No</span>
+        </div>
+        <button class="reset-options">Reset Options</button>
       </div>
     </div>
     <!-- end settings box -->
     <!-- start nav bullets -->
     <div class="nav-bullets">
-      <div class="bullet"><div class="tooltip">About Us</div></div>
-      <div class="bullet"><div class="tooltip">Our Skills</div></div>
-      <div class="bullet"><div class="tooltip">Our Gallery</div></div>
-      <div class="bullet"><div class="tooltip">Timeline</div></div>
+      <div class="bullet" data-section="about-us">
+        <div class="tooltip">About Us</div>
+      </div>
+      <div class="bullet" data-section="our-skills">
+        <div class="tooltip">Our Skills</div>
+      </div>
+      <div class="bullet" data-section="our-gallery">
+        <div class="tooltip">Our Gallery</div>
+      </div>
+      <div class="bullet" data-section="timeline">
+        <div class="tooltip">Timeline</div>
+      </div>
+      <div class="bullet" data-section="features">
+        <div class="tooltip">Features</div>
+      </div>
+      <div class="bullet" data-section="testimonials">
+        <div class="tooltip">Testimonials</div>
+      </div>
     </div>
     <!-- end nav bullets -->
     <!-- start landing page -->
@@ -50,12 +70,19 @@
       <div class="container">
         <div class="header-area">
           <div class="logo">Special Design</div>
-          <ul class="links">
-            <li><a href="#" class="active">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+          <div class="links-container">
+            <i class="fa-solid fa-bars-staggered links-container-bar"></i>
+            <ul class="links">
+              <li>
+                <a href="#" class="active" data-section="about-us">About</a>
+              </li>
+              <li><a href="#" data-section="our-skills">Skills</a></li>
+              <li><a href="#" data-section="our-gallery">Gallery</a></li>
+              <li><a href="#" data-section="timeline">Timeline</a></li>
+              <li><a href="#" data-section="features">Features</a></li>
+              <li><a href="#" data-section="testimonials">Testimonials</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="introduction-text">
@@ -69,8 +96,8 @@
     </div>
     <!-- end landing page -->
     <!-- start about us -->
-    <div class="container">
-      <div class="about-us">
+    <div class="about-us">
+      <div class="container">
         <div class="info-box">
           <h2>About Us</h2>
           <p>
@@ -291,6 +318,29 @@
       </div>
     </div>
     <!-- end testimonials  -->
+    <!-- start contact us-->
+    <div class="contact-us">
+      <div class="overlay"></div>
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="">
+          <div class="left">
+            <input type="text" name="username" placeholder="Your Name" />
+            <input type="text" name="username" placeholder="Your Phone" />
+            <input type="email" name="username" placeholder="Your Email" />
+            <input type="text" name="subject" placeholder="Subject" />
+          </div>
+          <div class="right">
+            <textarea name="msg" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end contact us-->
+    <!-- start footer -->
+    <div class="footer">Created By Demmane</div>
+    <!-- end footer -->
     <script src="./js/index.js"></script>
   </body>
 </html>

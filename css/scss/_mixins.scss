@@ -58,6 +58,12 @@
   font-weight: bold;
   font-size: 45px;
   color: var(--main-color);
+  @include breakpoints(mobile) {
+    font-size: 35px;
+  }
+  @include breakpoints(small) {
+    font-size: 35px;
+  }
 }
 //
 @mixin baCircle {
@@ -68,4 +74,17 @@
   background-color: $white;
   border: 3px solid var(--main-color);
   top: 20px;
+}
+//options box
+@mixin optionBox {
+  padding: 10px;
+  margin: 10px;
+  background-color: #eee;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  h4 {
+    margin: 0;
+    color: #666;
+  }
 }

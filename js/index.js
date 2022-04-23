@@ -1,3 +1,10 @@
+//handle active class
+function raActive(items, targetItem) {
+  items.forEach((item) => {
+    item.classList.remove("active");
+  });
+  targetItem.classList.add("active");
+}
 //setting box
 let settingBox = document.querySelector(".settings-box");
 let settingButton = document.querySelector(".iconCon");
@@ -14,22 +21,17 @@ if (window.localStorage.getItem("color")) {
     "--main-color",
     window.localStorage.getItem("color")
   );
-  //remve active class
-  colorLis.forEach((colorLi) => {
-    colorLi.classList.remove("active");
-  });
-  //add active class form local storage
-  document.querySelector(
+  let targetColorLs = document.querySelector(
     `[data-color = "${window.localStorage.getItem("color")}"]`
-  ).className = "active";
+  );
+  //add&remove active class
+  raActive(colorLis, targetColorLs);
 }
 //before manage the local storage
 colorLis.forEach((colorLi) => {
   colorLi.addEventListener("click", (event) => {
-    colorLis.forEach((colorLi) => {
-      colorLi.classList.remove("active");
-    });
-    event.currentTarget.classList.add("active");
+    //add&remove active class
+    raActive(colorLis, event.currentTarget);
     let currentColor = event.currentTarget.dataset.color;
     document.documentElement.style.setProperty("--main-color", currentColor);
     //local storage
@@ -41,12 +43,11 @@ let choixButtons = document.querySelectorAll(".option-box span");
 let backgroundOption = true;
 let backgroundInterval;
 if (window.localStorage.getItem("button")) {
-  choixButtons.forEach((button) => {
-    button.classList.remove("active");
-  });
-  document
-    .querySelector(`[class = "${window.localStorage.getItem("button")}"]`)
-    .classList.add("active");
+  let RbuttonLs = document.querySelector(
+    `[data-class = ${window.localStorage.getItem("button")}]`
+  );
+  //add&remove active class
+  raActive(choixButtons, RbuttonLs);
   //random backgrounds options
   if (window.localStorage.getItem("button") === "no") {
     backgroundOption = false;
@@ -59,13 +60,11 @@ if (window.localStorage.getItem("button")) {
 //before manage the local storage
 choixButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    choixButtons.forEach((button) => {
-      button.classList.remove("active");
-    });
-    event.currentTarget.classList.add("active");
-    window.localStorage.setItem("button", event.currentTarget.classList[0]);
+    //add&remove active class
+    raActive(choixButtons, event.currentTarget);
+    window.localStorage.setItem("button", event.currentTarget.dataset.class);
     // random backgrounds options
-    if (event.currentTarget.classList[0] === "no") {
+    if (event.currentTarget.dataset.class === "no") {
       backgroundOption = false;
       clearInterval(backgroundInterval);
     } else {
@@ -74,14 +73,59 @@ choixButtons.forEach((button) => {
     }
   });
 });
-//end setting box
-//start bullets
-let bullets = document.querySelectorAll(".bullet");
-bullets.forEach((bullet) => {
-  bullet.addEventListener("click", (event) => {});
+randomizeImgs();
+//reset button
+let reset = document.querySelector(".reset-options");
+reset.addEventListener("click", (event) => {
+  window.localStorage.clear();
+  window.location.reload();
 });
-
-//end bullets
+//end setting box
+//end going
+//go bullets
+let bullets = document.querySelectorAll(".bullet");
+go(bullets);
+//bullets in setting box
+let bulletBox = document.querySelector(".bullets-box");
+let choixBulletsButtons = document.querySelectorAll(" .bullets-box span");
+if (window.localStorage.getItem("bulletsShow")) {
+  let BbuttonLs = bulletBox.querySelector(
+    `[data-class = "${window.localStorage.getItem("bulletsShow")}"]`
+  );
+  raActive(choixBulletsButtons, BbuttonLs);
+  if (window.localStorage.getItem("bulletsShow") === "no") {
+    bullets[0].parentElement.style.display = "none";
+  }
+}
+choixBulletsButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    raActive(choixBulletsButtons, event.currentTarget);
+    window.localStorage.setItem(
+      "bulletsShow",
+      event.currentTarget.dataset.class
+    );
+    if (event.currentTarget.dataset.class === "no") {
+      bullets[0].parentElement.style.display = "none";
+    } else {
+      bullets[0].parentElement.style.display = "block";
+    }
+  });
+});
+//go links
+let links = document.querySelectorAll(".links li a");
+go(links);
+//go functions
+function go(source) {
+  source.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.preventDefault();
+      document.querySelector(`.${item.dataset.section}`).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+}
+//start going
 //landing page backgrounds
 let landingPage = document.querySelector(".landing-page");
 let numbers = [1, 2, 3, 4, 5];
@@ -95,6 +139,24 @@ function randomizeImgs() {
   }
 }
 //end page backgrounds
+//start header
+let theLinks = document.querySelector(".links");
+let bar = document.querySelector(".links-container i");
+bar.addEventListener("click", (event) => {
+  bar.classList.toggle("menu-active");
+  theLinks.classList.toggle("open");
+});
+//click anywhere out menu and toggle button
+theLinks.onclick = (e) => e.stopPropagation();
+document.addEventListener("click", (event) => {
+  if (event.target !== bar && event.target !== theLinks) {
+    if (theLinks.classList.contains("open")) {
+      theLinks.classList.remove("open");
+      bar.classList.remove("menu-active");
+    }
+  }
+});
+//end header
 //start skills
 let ourSkills = document.querySelector(".our-skills");
 let skillSpan = document.querySelectorAll(".skill-progress span");
@@ -150,3 +212,5 @@ ourGallery.forEach((image) => {
   });
 });
 //end gallery
+//start contact us
+//end contact us

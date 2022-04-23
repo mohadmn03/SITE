@@ -20,9 +20,23 @@ body {
 }
 //
 .container {
-  width: 1170px;
   @include paddinglr(15px, 15px);
   margin: auto;
+}
+@include breakpoints(small) {
+  .container {
+    width: 720px;
+  }
+}
+@include breakpoints(medium) {
+  .container {
+    width: 960px;
+  }
+}
+@include breakpoints(large) {
+  .container {
+    width: 1170px;
+  }
 }
 //
 ul {
