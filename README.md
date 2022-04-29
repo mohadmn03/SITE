@@ -9,7 +9,6 @@ Its primary objective is a good understanding of JavaScript's work :)
 
 
 
-
 TECH STACK:
 - HTML
 - CSS & SCSS
